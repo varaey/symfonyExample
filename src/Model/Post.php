@@ -63,17 +63,21 @@ class Post
     /**
      * @param mixed $shortDescription
      */
-    public function setShortDescription(string $shortDescription) : void
+    public function setShortDescription(string $shortDescription) : self
     {
         $this->shortDescription = $shortDescription;
+
+        return $this;
     }
 
     /**
      * @param mixed $image
      */
-    public function setImage(string $image) : void
+    public function setImage(string $image) : self
     {
         $this->image = $image;
+
+        return $this;
     }
 
     /**

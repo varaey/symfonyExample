@@ -10,15 +10,9 @@ class DefaultController extends AbstractController
 {
     public function index(): Response
     {
-        $posts = [
-            0 => [
-                'category' => [
-                    'name' => 'mycat'
-                ],
-                'title' => 'firts tost',
-                'publicationDate' => '12-12-2019'
-            ]
-        ];
-       return $this->render('default/index.html.twig');
+       $posts = $homePageService->getPosts();
+       return $this->render('default/index.html.twig', [
+           'posts' => $posts
+       ]);
     }
 }

@@ -19,4 +19,9 @@ class PostCollection implements  \IteratorAggregate
     {
         return new \ArrayIterator($this->posts);
     }
+
+    public function addPost(Post $post): void
+    {
+        $this->posts[] = $post;
+    }
 }
