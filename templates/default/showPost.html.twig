@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <section class="top-posts post-section">
+            {% if (post.image) %}
+                <div class="post-thumbnail">
+                    <img src="{{ post.image }}" alt="{{ post.title }}">
+                </div>
+            {% endif %}
+            <article class="post-content">
+                <h1>{{ post.title }}</h1>
+                <div class="meta-info">
+                    <span><b>Date:</b> {{ post.publicationDate | date('d-m-Y H:i') }}</span>
+                    <span><b>Category:</b> {{ post.category.name }}</span>
+                </div>
+                <div class="post-text">
+                    {{ post.description }}
+                </div>
+            </article>
+        </section>
+    </div>
+{% endblock %}

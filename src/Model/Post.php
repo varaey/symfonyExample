@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Model;
-
 
 class Post
 {
@@ -12,6 +10,7 @@ class Post
     private $shortDescription;
     private $image;
     private $publicationDate;
+    private $description;
 
     public function __construct(int $id, Category $category, string $title)
     {
@@ -23,7 +22,7 @@ class Post
     /**
      * @return int
      */
-    public function getId() : int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -31,7 +30,7 @@ class Post
     /**
      * @return Category
      */
-    public function getCategory() : Category
+    public function getCategory(): Category
     {
         return $this->category;
     }
@@ -39,7 +38,7 @@ class Post
     /**
      * @return string
      */
-    public function getTitle() : string
+    public function getTitle(): string
     {
         return $this->title;
     }
@@ -55,7 +54,7 @@ class Post
     /**
      * @return mixed
      */
-    public function getImage() : ?string
+    public function getImage(): ?string
     {
         return $this->image;
     }
@@ -63,7 +62,7 @@ class Post
     /**
      * @param mixed $shortDescription
      */
-    public function setShortDescription(string $shortDescription) : self
+    public function setShortDescription(string $shortDescription): self
     {
         $this->shortDescription = $shortDescription;
 
@@ -73,7 +72,7 @@ class Post
     /**
      * @param mixed $image
      */
-    public function setImage(string $image) : self
+    public function setImage(string $image): self
     {
         $this->image = $image;
 
@@ -91,9 +90,27 @@ class Post
     /**
      * @param mixed $publicationDate
      */
-    public function setPublicationDate(\DateTime $publicationDate) : self
+    public function setPublicationDate(\DateTime $publicationDate): self
     {
         $this->publicationDate = $publicationDate;
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }

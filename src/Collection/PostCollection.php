@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Collection;
-
 
 use App\Model\Post;
 

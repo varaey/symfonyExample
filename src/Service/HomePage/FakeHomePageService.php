@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Service\HomePage;
 
 use App\Collection\PostCollection;
@@ -20,12 +19,12 @@ class FakeHomePageService implements HomePageServiceInterface
             $post = new Post(
                 $faker->randomNumber(),
                 new Category($faker->name),
-                $faker->sentence
+                $faker->sentence()
             );
 
             $post
-                ->setShortDescription($faker->imageUrl())
-                ->setImage($faker->sentence())
+                ->setShortDescription($faker->sentence())
+                ->setImage($faker->imageUrl())
                 ->setPublicationDate($faker->dateTime())
             ;
 
@@ -35,4 +34,28 @@ class FakeHomePageService implements HomePageServiceInterface
         return $collection;
     }
 
+    /**
+     * @param int $id
+     * Method generate post by id
+     *
+     * @return object
+     */
+    public function getPostById(int $id): object
+    {
+        $faker = Factory::create();
+
+        $post = new Post(
+            $id,
+            new Category($faker->name),
+            $faker->sentence
+        );
+
+        $post
+            ->setDescription($faker->text(2300))
+            ->setImage($faker->imageUrl())
+            ->setPublicationDate($faker->dateTime())
+        ;
+
+        return $post;
+    }
 }

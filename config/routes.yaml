@@ -1,3 +1,8 @@
 index:
-    path: /home
+    path: /
     controller: App\Controller\DefaultController::index
+post_page:
+    path: /post/{id}
+    controller: App\Controller\DefaultController::showPost
+    requirements:
+        id: '\d+'

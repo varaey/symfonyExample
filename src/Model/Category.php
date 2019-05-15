@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Model;
-
 
 class Category
 {
@@ -16,7 +14,7 @@ class Category
     /**
      * @return string
      */
-    public function getName() : string
+    public function getName(): string
     {
         return $this->name;
     }

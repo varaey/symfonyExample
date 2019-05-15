@@ -39,6 +39,7 @@
         "symfony/polyfill-php56": "*"
     },
     "scripts": {
+        "cs-fix": "php-cs-fixer fix --allow-risky=yes --ansi",
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
@@ -60,6 +61,7 @@
         }
     },
     "require-dev": {
-        "symfony/debug-pack": "^1.0"
+        "symfony/debug-pack": "^1.0",
+        "friendsofphp/php-cs-fixer": "^2.14"
     }
 }
