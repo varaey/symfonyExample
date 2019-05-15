@@ -6,7 +6,7 @@ namespace App\Collection;
 
 use App\Model\Post;
 
-class PostCollection implements  \IteratorAggregate
+class PostCollection implements \IteratorAggregate
 {
     private $posts;
 
@@ -15,7 +15,7 @@ class PostCollection implements  \IteratorAggregate
         $this->posts = $posts;
     }
 
-    public function getIterator()
+    public function getIterator(): iterable
     {
         return new \ArrayIterator($this->posts);
     }

@@ -91,8 +91,10 @@ class Post
     /**
      * @param mixed $publicationDate
      */
-    public function setPublicationDate(\DateTime $publicationDate) : void
+    public function setPublicationDate(\DateTime $publicationDate) : self
     {
         $this->publicationDate = $publicationDate;
+
+        return $this;
     }
 }

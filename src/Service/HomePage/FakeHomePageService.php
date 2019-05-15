@@ -14,18 +14,18 @@ class FakeHomePageService implements HomePageServiceInterface
     {
         $collection = new PostCollection();
 
-        $faker = new Factory::create();
+        $faker = Factory::create();
 
         for ($i = 0; $i <= 10; $i++) {
             $post = new Post(
                 $faker->randomNumber(),
-                new Category($faker->words),
-                $faker->words
+                new Category($faker->name),
+                $faker->sentence
             );
 
             $post
                 ->setShortDescription($faker->imageUrl())
-                ->setImage($faker->sentance())
+                ->setImage($faker->sentence())
                 ->setPublicationDate($faker->dateTime())
             ;
 
